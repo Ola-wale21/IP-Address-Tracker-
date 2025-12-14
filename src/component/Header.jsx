@@ -2,7 +2,6 @@
 import {useState, useEffect} from "react";
 import axios from "axios"
 
-
 function Header(props) {
     const[ipAddress, setIpAddress] = useState("");
     const[locationData, setLocationData] = useState(null);
