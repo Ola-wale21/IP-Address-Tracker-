@@ -1,40 +1,94 @@
-# IP Address Tracker
+# Frontend Mentor - IP Address Tracker Solution
 
-This is a web application that allows users to track IP addresses and view their locations on a map, built using React, Leaflet, and Axios.
+This is my solution to the [IP Address Tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). The project is aimed at helping me improve my skills in React, Leaflet.js for maps, and handling API requests in a real-world app.
 
-## Challenges Faced
+## Table of contents
 
-### 1. **Integrating Leaflet in React App**
+* [Overview](#overview)
 
-**Problem:** Initially, I embedded Leaflet directly into the HTML file by linking the Leaflet JS and CSS files. This created challenges when trying to manage the map's state and behavior inside the React component.
+  * [The Challenge](#the-challenge)
+  * [Screenshot](#screenshot)
+  * [Links](#links)
+* [My Process](#my-process)
 
-**Solution:** I decided to install Leaflet via npm (`npm install leaflet`) to better integrate it into my React app, allowing more control over the map's state, positioning, and zoom levels. This eliminated the need to modify the HTML document directly and made it easier to manage dependencies and the map’s behavior.
+  * [Built with](#built-with)
+  * [What I Learned](#what-i-learned)
+  * [Continued Development](#continued-development)
+  * [Useful Resources](#useful-resources)
+* [Author](#author)
+* [Acknowledgments](#acknowledgments)
 
-### 2. **Handling Geolocation and IP-based Mapping**
+## Overview
 
-**Problem:** When trying to get the user's current location using the `map.locate()` function in Leaflet, I encountered issues with map re-renders, which led to errors such as the map not positioning correctly after receiving the geolocation data.
+### The Challenge
 
-**Solution:** I managed the geolocation using React's `useEffect` hook and ensured that the map was only re-rendered when necessary. I also implemented conditions to handle both the user's geolocation and IP-based locations, providing fallback mechanisms in case one of them failed.
+The challenge is to build an interactive IP address tracker that allows users to:
 
-### 3. **Zoom Controls Not Functioning**
+* View their current location on the map by default.
+* Search for an IP address or domain name and see its location on the map.
+* View a responsive layout optimized for mobile and desktop devices.
 
-**Problem:** I faced issues with the zoom controls not functioning correctly within the map when using Leaflet. The zoom buttons were not responsive or would cause errors.
+### Screenshot
 
-**Solution:** I fixed this by ensuring the zoom control was explicitly added with `L.control.zoom().addTo(map)` after initializing the map. I also checked the map’s container to make sure it had proper dimensions and did not interfere with the zoom control.
+![](./screenshot.jpg)
 
-### 4. **CORS Errors with API Calls**
+*Example screenshot after completing the project.*
 
-**Problem:** During development, I faced CORS (Cross-Origin Resource Sharing) errors when trying to make API calls to third-party services, such as IP location lookup, due to restrictions on certain domains.
+### Links
 
-**Solution:** I resolved this by using a proxy server for development purposes and ensuring that the API I was using (like Ipify) supported CORS or was being accessed via a server-side solution in production.
+* Solution URL: [https://github.com/Ola-wale21/IP-Address-Tracker](https://your-solution-url.com)
+* Live Site URL: [https://ip-address-tracker-phi-seven.vercel.app/](https://ip-address-tracker-phi-seven.vercel.app/)
 
-### 5. **Handling Errors in API Responses**
+## My Process
 
-**Problem:** Users inputting an incorrect IP address or an unresolvable address caused the app to crash or display misleading information without handling errors properly.
+### Built with
 
-**Solution:** I added error handling to the API request using `try/catch` blocks and displayed user-friendly error messages via `alert` or in the UI. I also validated the input IP address before sending requests to avoid unnecessary API calls.
+* **React** – A powerful JS library to create interactive UIs.
+* **Leaflet.js** – A map library used to show the IP address location on the map.
+* **Axios** – For handling API requests.
+* **CSS (Flexbox, Grid, Custom Properties)** – To create the layout.
+* **Vite** – To bundle the project quickly.
 
-## Future Improvements
+### What I Learned
 
-* Implementing more granular error handling and UI feedback during API calls.
-* Improving the responsiveness of the map by adjusting its container dynamically.
+* How to integrate **Leaflet.js** with **React** to display interactive maps.
+* Handling **Geolocation API** and **IP geolocation** requests to track IP addresses.
+* How to use **React hooks** like `useEffect` and `useState` for managing component lifecycle and states.
+* Customizing **map markers** and handling the positioning of popups in Leaflet.js.
+* Improved my skills in **responsive design** to ensure a smooth experience across devices.
+* How to handle **API error responses** and provide user-friendly feedback.
+
+### Continued Development
+
+* Further optimize the application to handle errors gracefully and improve user feedback.
+* Integrate **loading spinners** or animations while fetching data from the API.
+* Add more map functionality such as zoom control or satellite view.
+* Focus on **state management** with libraries like Redux to better manage app states in larger projects.
+
+### Useful Resources
+
+* [Leaflet Documentation](https://leafletjs.com/reference.html) – Essential for handling map markers, popups, and tile layers.
+* [Axios Documentation](https://axios-http.com/docs/intro) – Helps in making API requests, especially for geolocation services.
+* [Frontend Mentor - IP Address Tracker](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0) – The challenge itself was an excellent guide to improve my frontend skills.
+
+## Author
+
+* Frontend Mentor - [@ola-wale21](https://www.frontendmentor.io/profile/Ola-wale21)
+* GitHub - [@ola-wale21](https://github.com/Ola-wale21)
+* Twitter - [@_Dry_lord](https://www.twitter.com/_Dry_lord)
+
+## Acknowledgments
+
+* Thanks to **Frontend Mentor** for providing such great challenges and resources.
+* The **Leaflet.js** community for their great documentation and tutorials, which made integrating maps into my React app much easier.
+
+---
+
+### Updates:
+
+1. **Built with** section now specifically lists React, Leaflet, Axios, and Vite.
+2. **What I Learned** now includes key learnings and what I specifically tackled in the project (like API requests, custom map markers).
+3. **Continued Development** gives ideas for next steps and improvements.
+4. **Useful Resources** contains links to the tools and documentation that helped you build the project.
+
+I hope this helps, and feel free to tweak it further based on your specific experience!
